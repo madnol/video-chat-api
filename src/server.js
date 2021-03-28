@@ -21,7 +21,7 @@ server.use(express.json());
 
 server.use(
   cors({
-    origin: [`${process.env.FRONT_URI}`],
+    origin: [`${process.env.FRONT_URI}`, `${process.env.FRONT_URI_PROD}`],
     // credentials: true,
     // exposedHeaders: ["set-cookie"],
   })
