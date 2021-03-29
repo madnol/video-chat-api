@@ -31,8 +31,7 @@ server.use(
     // optional, useful for custom headers
     handlePreflightRequest: (req, res) => {
       res.writeHead(200, {
-        "Access-Control-Allow-Origin":
-          "https://new-client-hxoz0ogs4-madnol.vercel.app",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET,POST",
         "Access-Control-Allow-Headers": "my-custom-header",
         "Access-Control-Allow-Credentials": true,
