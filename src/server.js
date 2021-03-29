@@ -27,6 +27,7 @@ server.use(
       "https://happy-chandrasekhar-a2a9b3.netlify.app/",
       "3.64.200.242:443",
     ],
+    methods: ["GET", "POST"],
     credentials: true,
     exposedHeaders: ["set-cookie"],
   })
