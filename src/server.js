@@ -21,7 +21,11 @@ server.use(express.json());
 
 server.use(
   cors({
-    origin: [`${process.env.FRONT_URI}`, `${process.env.FRONT_URI_PROD}`],
+    origin: [
+      `${process.env.FRONT_URI}`,
+      `${process.env.FRONT_URI_PROD}`,
+      "https://happy-chandrasekhar-a2a9b3.netlify.app/",
+    ],
     // credentials: true,
     // exposedHeaders: ["set-cookie"],
   })
