@@ -27,9 +27,22 @@ server.use(
       "https://happy-chandrasekhar-a2a9b3.netlify.app/",
       "3.64.200.242:443",
     ],
-    methods: ["GET", "POST"],
-    credentials: true,
-    exposedHeaders: ["set-cookie"],
+
+    // optional, useful for custom headers
+    handlePreflightRequest: (req, res) => {
+      res.writeHead(200, {
+        "Access-Control-Allow-Origin":
+          "https://new-client-hxoz0ogs4-madnol.vercel.app",
+        "Access-Control-Allow-Methods": "GET,POST",
+        "Access-Control-Allow-Headers": "my-custom-header",
+        "Access-Control-Allow-Credentials": true,
+      });
+      res.end();
+    },
+    // methods: ["GET", "POST"],
+    // allowedHeaders: ["Access-Control-Allow-Origin"],
+    // credentials: true,
+    // exposedHeaders: ["set-cookie"],
   })
 );
 //*API ROUTE
