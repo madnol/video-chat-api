@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const error_handler = require("node-error-handler");
+const cookieParser = require("cookie-parser");
+const passport = require("passport");
 const cors = require("cors");
 const listEndpoints = require("express-list-endpoints");
 const apiRoutes = require("./Routes");
@@ -18,7 +20,8 @@ createSocketServer(httpServer);
 server.set("trust proxy", 1);
 server.enable("trust proxy");
 server.use(express.json());
-//?
+server.use(passport.initialize());
+
 server.use(
   cors({
     origin: [
@@ -48,6 +51,8 @@ server.use(
     // exposedHeaders: ["set-cookie"],
   })
 );
+
+server.use(cookieParser());
 //*API ROUTE
 server.use("/api", apiRoutes);
 
