@@ -22,7 +22,7 @@ UserRouter.post(
 UserRouter.get("/me", authorizeUser, getMe);
 UserRouter.get("/search", authorizeUser, SearchController);
 UserRouter.get("/", authorizeUser, GetAllUsers);
-UserRouter.get("/:username", authorizeUser, GetSingleUser);
-UserRouter.get("/:username", authorizeUser, GetSingleUser);
+// UserRouter.get("/:username", authorizeUser, GetSingleUser);
+// UserRouter.get("/:username", authorizeUser, GetSingleUser);
 
 module.exports = UserRouter;
