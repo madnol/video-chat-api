@@ -9,11 +9,7 @@ const {
 const authorizeUser = require("../../Middlewares/auth/index");
 
 //*All the rooms
-groupRoomsRouter.get(
-  "/",
-  // authorizeUser,
-  getAllRooms
-);
+groupRoomsRouter.get("/", authorizeUser, getAllRooms);
 
 // //*Single room
 // groupRoomsRouter.get("/data/:roomId", authorizeUser, getSingleRoom);
