@@ -12,7 +12,7 @@ const {
   GetSingleUser,
 } = require("../../Controllers/userController");
 
-UserRouter.get("/register", registerUser);
+UserRouter.get("/register", RegisterUser);
 UserRouter.post(
   "/upload",
   authorizeUser,
@@ -20,7 +20,7 @@ UserRouter.post(
   UploadImage
 );
 UserRouter.get("/me", authorizeUser, getMe);
-UserRouter.get("/search", authorizeUser, searchController);
+UserRouter.get("/search", authorizeUser, SearchController);
 UserRouter.get("/", authorizeUser, GetAllUsers);
 UserRouter.get("/:username", authorizeUser, GetSingleUser);
 UserRouter.get("/:username", authorizeUser, GetSingleUser);
