@@ -7,7 +7,7 @@ const { generateTokens, verifyAccessToken } = require("../lib/auth/tokens");
 
 const passport = require("passport");
 
-const { FE_URI } = process.env;
+const { FRONT_URI } = process.env;
 
 exports.loginController = async (req, res, next) => {
   try {
@@ -56,7 +56,7 @@ exports.refreshTokenController = async (req, res, next) => {
 exports.logoutController = async (req, res, next) => {
   try {
     const clearCookies = await deleteCookies(res);
-    res.redirect(`${FE_URI}`);
+    res.redirect(`${FRONT_URI}`);
   } catch (error) {
     console.log("logoutController ERROR", error);
     next(error);
@@ -73,7 +73,7 @@ exports.callbackGoogle = async (req, res, next) => {
     const cookies = await generateCookies(tokens, res);
 
     //Verify credentials
-    res.redirect(FE_URI);
+    res.redirect(FRONT_URI);
   } catch (error) {
     console.log("callbackGoole ERROR", error);
     next(error);
