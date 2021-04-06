@@ -1,6 +1,5 @@
 const authRoutes = require("express").Router();
 const {
-  test,
   validationMiddleware,
 } = require("../../lib/validation/validationMiddleware");
 const loginSchema = require("../../lib/validation/validationSchema")

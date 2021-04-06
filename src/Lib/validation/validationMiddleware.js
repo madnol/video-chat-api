@@ -15,6 +15,4 @@ const validationMiddleware = (schema, prop) => {
   };
 };
 
-const test = () => {};
-
-module.exports = { validationMiddleware, test };
+module.exports = { validationMiddleware };
