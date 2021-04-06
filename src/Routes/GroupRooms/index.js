@@ -9,16 +9,20 @@ const {
 const authorizeUser = require("../../Middlewares/auth/index");
 
 //*All the rooms
-groupRoomsRouter.get("/", authorizeUser, getAllRooms);
+groupRoomsRouter.get(
+  "/",
+  // authorizeUser,
+  getAllRooms
+);
 
-//*Single room
-groupRoomsRouter.get("/data/:roomId", authorizeUser, getSingleRoom);
+// //*Single room
+// groupRoomsRouter.get("/data/:roomId", authorizeUser, getSingleRoom);
 
-//*Create a new room
-groupRoomsRouter.post("/", authorizeUser, createRoom);
+// //*Create a new room
+// groupRoomsRouter.post("/", authorizeUser, createRoom);
 
-//*Leave room
-groupRoomsRouter.put("/:roomId/leaveroom", authorizeUser, leaveTheRoom);
+// //*Leave room
+// groupRoomsRouter.put("/:roomId/leaveroom", authorizeUser, leaveTheRoom);
 
-console.log("all good");
+// console.log("all good");
 module.exports = groupRoomsRouter;
