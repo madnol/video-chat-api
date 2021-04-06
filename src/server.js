@@ -39,7 +39,7 @@ server.use(
           "http://localhost:3000",
         ],
         "Access-Control-Allow-Methods": "GET,POST",
-        "Access-Control-Allow-Headers": "my-custom-header",
+        "Access-Control-Allow-Headers": ["my-custom-header"],
         "Access-Control-Expose-Headers": ["set-cookie"],
         "Access-Control-Allow-Credentials": true,
       });

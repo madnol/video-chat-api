@@ -17,6 +17,7 @@ const createSocketServer = server => {
 
         const length = users[roomID].length;
         if (length === 4) {
+          socket.emit("room full", console.log("room is full"));
           return;
         }
         users[roomID].push(socket.id);
