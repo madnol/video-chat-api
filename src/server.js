@@ -31,7 +31,10 @@ server.use(
     // optional, useful for custom headers
     handlePreflightRequest: (req, res) => {
       res.writeHead(200, {
-        "Access-Control-Allow-Origin": "https://new-client.vercel.app",
+        "Access-Control-Allow-Origin": [
+          "https://new-client.vercel.app",
+          "http://localhost:3000",
+        ],
         "Access-Control-Allow-Methods": "GET,POST",
         "Access-Control-Allow-Headers": "my-custom-header",
         "Access-Control-Expose-Headers": ["set-cookie"],
