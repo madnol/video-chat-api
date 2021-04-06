@@ -9,43 +9,43 @@ const {
   refreshTokenController,
 } = require("../../Controllers/authController");
 
-const { FE_URI } = process.env;
+const { FRONT_URI } = process.env;
 
 const { generateCookies } = require("../../lib/auth/cookies");
 
 authRoutes.post("/login", validate(loginSchema), loginController);
-authRoutes.post("/refresh", refreshTokenController);
-authRoutes.post("/logout", logoutController);
+// authRoutes.post("/refresh", refreshTokenController);
+// authRoutes.post("/logout", logoutController);
 
-//*OAUTH
+// //*OAUTH
 
-//Login Google
-authRoutes.get(
-  "/google",
-  passport.authenticate("google", {
-    scope: ["profile", "email"],
-  })
-);
+// //Login Google
+// authRoutes.get(
+//   "/google",
+//   passport.authenticate("google", {
+//     scope: ["profile", "email"],
+//   })
+// );
 
-authRoutes.get(
-  "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/login" }),
-  async (req, res, next) => {
-    try {
-      console.log(req.user);
-      const { tokens } = req.user;
-      const cookies = await generateCookies(tokens, res);
-      //verify credentials
-      res.redirect(FE_URI);
-    } catch (err) {
-      console.log(err);
-      next(err);
-    }
-  }
-);
+// authRoutes.get(
+//   "/google/callback",
+//   passport.authenticate("google", { failureRedirect: "/login" }),
+//   async (req, res, next) => {
+//     try {
+//       console.log(req.user);
+//       const { tokens } = req.user;
+//       const cookies = await generateCookies(tokens, res);
+//       //verify credentials
+//       res.redirect(FRONT_URI);
+//     } catch (err) {
+//       console.log(err);
+//       next(err);
+//     }
+//   }
+// );
 
-//Login Facebook
-authRoutes.post("/facebook");
-authRoutes.post("/facebook/callback");
+// //Login Facebook
+// authRoutes.post("/facebook");
+// authRoutes.post("/facebook/callback");
 
 module.exports = authRoutes;

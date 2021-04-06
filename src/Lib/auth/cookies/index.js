@@ -12,7 +12,7 @@ const generateCookies = async (tokens, res) => {
     });
 
     res.cookie("refreshToken", refreshToken, {
-      httpOnly: true,
+      // httpOnly: true,
       secure: true, //set to true when deploy
       maxAge: EXPIRATION_REFRESH_COOKIE,
       sameSite: "none", // enable this for deployment
