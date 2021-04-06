@@ -15,4 +15,6 @@ const validationMiddleware = schema => {
   };
 };
 
-module.exports = { validationMiddleware };
+const test = () => {};
+
+module.exports = { validationMiddleware, test };
