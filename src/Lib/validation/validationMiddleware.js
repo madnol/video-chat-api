@@ -1,4 +1,4 @@
-const validationMiddleware = (schema, prop) => {
+const validationMiddleware = schema => {
   return (req, res, next) => {
     const { error } = schema.validate(req.body);
     const valid = error == null;
@@ -15,4 +15,4 @@ const validationMiddleware = (schema, prop) => {
   };
 };
 
-module.exports = validationMiddleware;
+module.exports = { validationMiddleware };
