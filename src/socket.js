@@ -11,15 +11,12 @@ const createSocketServer = server => {
   const io = socketio(server);
 
   io.on("connection", socket => {
-    const user = socket.request.user;
-
     socket.on("join room", roomID => {
       if (users[roomID]) {
         console.log("room: ", roomID);
 
         const length = users[roomID].length;
         if (length === 4) {
-          socket.emit("room full", console.log("room is full"));
           return;
         }
         users[roomID].push(socket.id);
