@@ -1,5 +1,5 @@
 const authRoutes = require("express").Router();
-// const validate = require("../../lib/validation/validationMiddleware");
+const validate = require("../../lib/validation/validationMiddleware");
 // const loginSchema = require("../../lib/validation/validationSchema")
 //   .loginSchema;
 // const passport = require("passport");
