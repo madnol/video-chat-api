@@ -2,22 +2,22 @@ const authRoutes = require("express").Router();
 const {
   validationMiddleware,
 } = require("../../lib/validation/validationMiddleware");
-const loginSchema = require("../../lib/validation/validationSchema")
-  .loginSchema;
-const passport = require("passport");
-const {
-  loginController,
-  logoutController,
-  refreshTokenController,
-} = require("../../Controllers/authController");
+// const loginSchema = require("../../lib/validation/validationSchema")
+//   .loginSchema;
+// const passport = require("passport");
+// const {
+//   loginController,
+//   logoutController,
+//   refreshTokenController,
+// } = require("../../Controllers/authController");
 
-const { FRONT_URI } = process.env;
+// const { FRONT_URI } = process.env;
 
-const { generateCookies } = require("../../lib/auth/cookies");
+// const { generateCookies } = require("../../lib/auth/cookies");
 
-authRoutes.post("/login", validate(loginSchema), loginController);
-authRoutes.post("/refresh", refreshTokenController);
-authRoutes.post("/logout", logoutController);
+// authRoutes.post("/login", validate(loginSchema), loginController);
+// authRoutes.post("/refresh", refreshTokenController);
+// authRoutes.post("/logout", logoutController);
 
 // //*OAUTH
 
