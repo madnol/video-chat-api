@@ -22,8 +22,8 @@ server.use(express.json());
 server.use(
   cors({
     origin: [
+      `${process.env.FRONT_URI_LOCAL}`,
       `${process.env.FRONT_URI}`,
-      `${process.env.FRONT_URI_PROD}`,
       "https://happy-chandrasekhar-a2a9b3.netlify.app/",
       "3.64.200.242:443",
     ],
@@ -34,6 +34,7 @@ server.use(
         "Access-Control-Allow-Origin": "https://new-client.vercel.app",
         "Access-Control-Allow-Methods": "GET,POST",
         "Access-Control-Allow-Headers": "my-custom-header",
+        "Access-Control-Expose-Headers": ["set-cookie"],
         "Access-Control-Allow-Credentials": true,
       });
       res.end();
