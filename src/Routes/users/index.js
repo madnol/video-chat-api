@@ -1,7 +1,7 @@
 const UserRouter = require("express").Router();
 const authorizeUser = require("../../Middlewares/auth");
-const cloudinaryParser = require("../../lib/cloudinary/users");
-
+const cloudinaryParser = require("./users");
+console.log({ cloudinaryParser });
 //*Controllers
 const {
   RegisterUser,
