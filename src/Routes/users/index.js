@@ -1,6 +1,6 @@
 const UserRouter = require("express").Router();
 const authorizeUser = require("../../Middlewares/auth");
-const cloudinaryParser = require("../../lib/cloudinary/users");
+// const cloudinaryParser = require("../../lib/cloudinary/users");
 
 //*Controllers
 const {
@@ -16,7 +16,7 @@ UserRouter.get("/register", RegisterUser);
 UserRouter.post(
   "/upload",
   authorizeUser,
-  cloudinaryParser.single("image"),
+  // cloudinaryParser.single("image"),
   UploadImage
 );
 UserRouter.get("/me", authorizeUser, getMe);
