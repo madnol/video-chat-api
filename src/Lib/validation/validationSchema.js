@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-exports.schemas = {
+schemas = {
   userSchema: Joi.object().keys({
     name: Joi.string(),
     lastname: Joi.string(),
@@ -13,3 +13,5 @@ exports.schemas = {
     password: Joi.string().min(6).required(),
   }),
 };
+
+module.exports = schemas;
