@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 const port = process.env.PORT || 3001;
 //*Server
 const server = express();
-const http = require("http");
+const http = require("https");
 const httpServer = http.createServer(server);
 //*SOCKET IO CONNECTION
 createSocketServer(httpServer);
