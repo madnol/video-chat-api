@@ -16,7 +16,7 @@ const {
   GetSingleUser,
 } = require("../../Controllers/userController");
 
-UserRouter.get(
+UserRouter.post(
   "/register",
   validationMiddleware(schemas.userSchema),
   RegisterUser
