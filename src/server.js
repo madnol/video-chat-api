@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 const port = process.env.PORT || 3001;
 //*Server
 const server = express();
-const http = require("https");
+const http = require("http");
 const httpServer = http.createServer(server);
 //*SOCKET IO CONNECTION
 createSocketServer(httpServer);
@@ -24,21 +24,16 @@ server.use(passport.initialize());
 
 server.use(
   cors({
-    origin: [
-      `${process.env.FRONT_URI}`,
-      `${process.env.FRONT_URI_PROD}`,
-      "https://happy-chandrasekhar-a2a9b3.netlify.app/",
-      "3.64.200.242:443",
-    ],
+    origin: [`${process.env.FRONT_URI}`, `${process.env.FRONT_URI_PROD}`],
 
     // optional, useful for custom headers
     handlePreflightRequest: (req, res) => {
       res.writeHead(200, {
         "Access-Control-Allow-Origin": [
-          "https://new-client.vercel.app",
+          "https://new-client-4lc8wu84z-madnol.vercel.app",
           "http://localhost:3000",
         ],
-        "Access-Control-Allow-Methods": "GET,POST",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE",
         "Access-Control-Allow-Headers": ["my-custom-header"],
         "Access-Control-Expose-Headers": ["set-cookie"],
         "Access-Control-Allow-Credentials": true,
