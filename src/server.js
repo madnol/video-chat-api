@@ -33,10 +33,10 @@ server.use(
           "https://new-client-4lc8wu84z-madnol.vercel.app",
           "http://localhost:3000",
         ],
-        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE",
-        "Access-Control-Allow-Headers": ["my-custom-header"],
-        "Access-Control-Expose-Headers": ["set-cookie"],
-        "Access-Control-Allow-Credentials": true,
+        // "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE",
+        // "Access-Control-Allow-Headers": ["my-custom-header"],
+        // "Access-Control-Expose-Headers": ["set-cookie"],
+        // "Access-Control-Allow-Credentials": true,
       });
       res.end();
     },
