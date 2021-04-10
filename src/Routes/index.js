@@ -5,7 +5,7 @@ const userRouter = require("./users");
 const authRouter = require("./auth");
 
 rootRouter.use("/users", userRouter);
-// rootRouter.use("/auth", authRouter);
+rootRouter.use("/auth", authRouter);
 
 // rootRouter.use("/groups", groupRouter);
 // change

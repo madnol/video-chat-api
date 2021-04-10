@@ -11,16 +11,14 @@ const { FRONT_URI } = process.env;
 
 exports.loginController = async (req, res, next) => {
   try {
-    console.log("ok");
     const { username, password } = req.body;
+
     const user = await UserModel.findOne({ username });
-    console.log(user);
 
     if (!user) throw error;
 
     if (user) {
       const isValid = await user.comparePass(password);
-      console.log(isValid);
 
       const tokens = await generateTokens(user);
 
@@ -32,6 +30,7 @@ exports.loginController = async (req, res, next) => {
     }
   } catch (error) {
     console.log("loginController ERROR!", error);
+    next(error);
   }
 };
 

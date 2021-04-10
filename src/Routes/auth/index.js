@@ -1,19 +1,19 @@
 const authRoutes = require("express").Router();
 const validate = require("../../Lib/validation/validationMiddleware");
+const loginSchema = require("../../Lib/validation/validationSchema")
+  .loginSchema;
+const passport = require("passport");
+const {
+  loginController,
+  //   logoutController,
+  //   refreshTokenController,
+} = require("../../Controllers/authController");
 
-//   .loginSchema;
-// const passport = require("passport");
-// const {
-//   loginController,
-//   //   logoutController,
-//   //   refreshTokenController,
-// } = require("../../Controllers/authController");
+const { FRONT_URI } = process.env;
 
-// const { FRONT_URI } = process.env;
+const { generateCookies } = require("../../lib/auth/cookies");
 
-// const { generateCookies } = require("../../lib/auth/cookies");
-
-// authRoutes.post("/login", validationMiddleware(loginSchema), loginController);
+authRoutes.post("/login", validate(loginSchema), loginController);
 // authRoutes.post("/refresh", refreshTokenController);
 // authRoutes.post("/logout", logoutController);
 

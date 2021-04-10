@@ -28,6 +28,7 @@ const decodeJWT = (token, secret) =>
 const generateTokens = async user => {
   try {
     const { username, _id } = user;
+
     const accessToken = await encodeJWT(
       { username, _id },
       ACCESS_TOKEN_SECRET,
@@ -38,6 +39,7 @@ const generateTokens = async user => {
       ACCESS_TOKEN_SECRET,
       EXPIRATION_REFRESH_TOKEN
     );
+
     user.refreshToken = refreshToken;
     user.save();
     return { accessToken, refreshToken };
