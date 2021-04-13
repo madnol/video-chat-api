@@ -61,9 +61,10 @@ const verifyAccessToken = async token => {
   }
 };
 
-const verifyRefreshToken = async token => {
+const verifyRefreshToken = async req => {
   try {
     const { refreshToken } = req.cookies;
+
     const user = await decodeJWT(refreshToken, REFRESH_TOKEN_SECRET);
     console.log(user);
 

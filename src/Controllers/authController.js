@@ -26,6 +26,7 @@ exports.loginController = async (req, res, next) => {
       else {
         const cookies = await generateCookies(tokens, res);
         res.send(tokens);
+        console.log(cookies);
       }
     }
   } catch (error) {

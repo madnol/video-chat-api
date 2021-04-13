@@ -3,12 +3,12 @@ const { EXPIRATION_ACCESS_COOKIE, EXPIRATION_REFRESH_COOKIE } = process.env;
 const generateCookies = async (tokens, res) => {
   try {
     const { accessToken, refreshToken } = tokens;
-    console.log(accessToken);
+
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
+      path: "/auth/login",
       // secure: true, //set to true when deploy
       maxAge: EXPIRATION_ACCESS_COOKIE,
-      // sameSite: "none",
       // sameSite: "none", // enable this for deployment
     });
 
